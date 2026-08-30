@@ -1,0 +1,23 @@
+[tasks.fmt]
+description = "Check Rust formatting"
+run = "cargo fmt --all -- --check"
+
+[tasks.check]
+description = "Compile all targets with the lockfile"
+run = "cargo check --all-targets --all-features --locked"
+
+[tasks.test]
+description = "Run all Rust tests"
+run = "cargo test --all-targets --all-features --locked"
+
+[tasks.lint]
+description = "Run strict Clippy"
+run = "cargo clippy --workspace --all-targets --all-features --locked -- -D warnings"
+
+[tasks.package]
+description = "Verify the package file list"
+run = "cargo package --locked --list"
+
+[tasks.ci]
+description = "Run the M1 Rust gate"
+depends = ["fmt", "check", "test", "lint", "package"]

@@ -1,0 +1,12 @@
+[repo]
+tier = "leaf"
+kind = "app"
+visibility = "public"
+research = false
+
+[map.dirs]
+src = "CLI, configuration, map generation, and report implementation"
+tests = "CLI and map behavior tests"
+
+[map.files]
+"repolint.toml" = "Repository-local adoption and map sources"
